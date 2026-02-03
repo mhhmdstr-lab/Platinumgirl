@@ -7,79 +7,80 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body {
-  background: radial-gradient(circle at top, #1a1a1a, #000);
+body{
+  background: linear-gradient(135deg,#1e3a8a,#2563eb,#38bdf8);
 }
-.card {
-  background: rgba(20,20,20,0.85);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.08);
+.card{
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.05);
 }
-.btn-send {
-  background: linear-gradient(135deg,#16a34a,#15803d);
+.btn-send{
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
 }
-input, select, textarea {
-  background:#f1f5f9;
+input,select,textarea{
+  background:#f8fafc;
 }
 </style>
 </head>
 
 <body class="min-h-screen flex items-center justify-center px-4 py-10">
 
-<div class="w-full max-w-md card rounded-3xl shadow-2xl p-6 text-gray-900">
+<div class="w-full max-w-md card rounded-3xl shadow-2xl p-6 text-gray-800">
 
   <!-- HEADER -->
-  <h1 class="text-2xl font-bold text-center mb-2">Lamaran Pekerjaan</h1>
+  <h1 class="text-2xl font-bold text-center mb-2 text-blue-700">
+    Lamaran Pekerjaan
+  </h1>
+
   <p class="text-sm text-center text-gray-600 mb-5">
-    Platinum Grill berlokasi di dalam Tangcity Mall, Tangerang, tepatnya di
-    Lantai LG (Lower Ground). Restoran ini menyajikan berbagai menu steak premium
-    dan hidangan hotplate lainnya. Alamat: Jl. Jenderal Sudirman No. 1, Cikokol,
-    Tangerang, Banten.
+    Platinum Grill berlokasi di Tangcity Mall, Tangerang – Lantai LG (Lower Ground).
+    Menyajikan steak premium dan hidangan hotplate.
+    <br><b>Alamat:</b> Jl. Jenderal Sudirman No.1, Cikokol, Tangerang.
   </p>
 
-  <h2 class="text-center text-sm tracking-widest font-bold mb-4">
+  <h2 class="text-center text-sm tracking-widest font-bold mb-4 text-blue-600">
     INFORMASI PELAMAR
   </h2>
 
   <!-- FORM -->
   <form id="formLamaran" class="space-y-3">
 
-    <input required placeholder="Nama Lengkap"
+    <input name="nama" required placeholder="Nama Lengkap"
       class="w-full p-3 rounded-xl border">
 
-    <input required type="date"
+    <input name="ttl" required type="date"
       class="w-full p-3 rounded-xl border">
 
-    <input required placeholder="Alamat Saat Ini"
+    <input name="alamat" required placeholder="Alamat Saat Ini"
       class="w-full p-3 rounded-xl border">
 
-    <input required type="email" placeholder="Email Aktif"
+    <input name="email" required type="email" placeholder="Email Aktif"
       class="w-full p-3 rounded-xl border">
 
-    <input required type="tel" placeholder="Nomor WhatsApp"
+    <input name="wa" required type="tel" placeholder="Nomor WhatsApp"
       class="w-full p-3 rounded-xl border">
 
-    <input placeholder="LinkedIn (Opsional)"
+    <input name="linkedin" placeholder="LinkedIn (Opsional)"
       class="w-full p-3 rounded-xl border">
 
-    <select required class="w-full p-3 rounded-xl border">
+    <select name="posisi" required class="w-full p-3 rounded-xl border">
       <option value="">Posisi yang Dilamar</option>
       <option>Kasir</option>
       <option>Waiter / Waitress</option>
       <option>Crew Kitchen</option>
     </select>
 
-    <input required type="date"
+    <input name="siapkerja" required type="date"
       class="w-full p-3 rounded-xl border">
 
-    <!-- UPLOAD (VISUAL SAJA) -->
+    <!-- UPLOAD VISUAL -->
     <div class="border-2 border-dashed rounded-xl p-4 text-center text-sm text-gray-500">
       Unggah Resume / CV<br>
       <span class="text-xs">(PDF / JPG)</span>
-      <input type="file" required class="mt-2 w-full text-xs">
+      <input type="file" class="mt-2 w-full text-xs">
     </div>
 
-    <textarea required placeholder="Surat Pengantar"
+    <textarea name="pesan" required placeholder="Surat Pengantar"
       class="w-full p-3 rounded-xl border h-24"></textarea>
 
     <button type="submit"
@@ -99,23 +100,27 @@ input, select, textarea {
 document.getElementById("formLamaran").addEventListener("submit", function(e){
   e.preventDefault();
 
-  const f = e.target.elements;
+  const f = e.target;
 
-  const msg = `
-LAMARAN PLATINUM GRILL
-Nama: ${f[0].value}
-Tanggal Lahir: ${f[1].value}
-Alamat: ${f[2].value}
-Email: ${f[3].value}
-WhatsApp: ${f[4].value}
-LinkedIn: ${f[5].value}
-Posisi: ${f[6].value}
-Siap Kerja: ${f[7].value}
-Pesan: ${f[9].value}
-`;
+  const msg =
+`LAMARAN PLATINUM GRILL
+Nama: ${f.nama.value}
+Tanggal Lahir: ${f.ttl.value}
+Alamat: ${f.alamat.value}
+Email: ${f.email.value}
+WhatsApp: ${f.wa.value}
+LinkedIn: ${f.linkedin.value}
+Posisi: ${f.posisi.value}
+Siap Kerja: ${f.siapkerja.value}
 
-  const wa = "6283838188931"; // GANTI NOMOR HRD
+Surat Pengantar:
+${f.pesan.value}`;
+
+  const wa = "6283838188931"; // NOMOR HRD
   window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`);
+
+  // RESET FORM BIAR FULL KEMBALI
+  f.reset();
 });
 </script>
 
