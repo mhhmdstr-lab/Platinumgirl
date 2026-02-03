@@ -53,3 +53,127 @@ input:focus, textarea:focus{
     outline:none;
     border-color:#28a745;
 }
+.upload-box{
+    border:2px dashed #bbb;
+    padding:25px;
+    text-align:center;
+    border-radius:10px;
+    margin-bottom:20px;
+    color:#666;
+}
+button{
+    width:100%;
+    padding:14px;
+    background:#28a745;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+button:disabled{
+    background:#9ccc9c;
+    cursor:not-allowed;
+}
+.footer-note{
+    text-align:center;
+    font-size:12px;
+    color:#777;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Lamaran Pekerjaan</h1>
+
+<p class="desc">
+Platinum Grill berlokasi di dalam Tangcity Mall, Tangerang, tepatnya di Lantai LG (Lower Ground).  
+Restoran ini menyajikan berbagai menu steak premium dan hidangan hotplate lainnya.  
+Alamat: Jl. Jenderal Sudirman No.1, Cikokol, Tangerang, Banten.
+</p>
+
+<div class="section-title">INFORMASI PELAMAR</div>
+
+<form id="formLamaran">
+
+<label>Nama Lengkap</label>
+<input type="text" id="nama" placeholder="Nama lengkap">
+
+<label>Tanggal Lahir</label>
+<input type="date" id="tgl">
+
+<label>Alamat Saat Ini</label>
+<input type="text" id="alamat">
+
+<label>Email Aktif</label>
+<input type="email" id="email" placeholder="nama@email.com">
+
+<label>Nomor WhatsApp</label>
+<input type="tel" id="wa" placeholder="08xxxxxxxxxx">
+
+<label>LinkedIn (Opsional)</label>
+<input type="text" id="linkedin">
+
+<label>Posisi yang Dilamar</label>
+<select id="posisi">
+<option value="">Pilih Posisi</option>
+<option>Kitchen Crew</option>
+<option>Waiter / Waitress</option>
+<option>Cashier</option>
+<option>Supervisor</option>
+</select>
+
+<label>Tanggal Siap Bekerja</label>
+<input type="date" id="siap">
+
+<label>Unggah Resume / CV</label>
+<div class="upload-box">
+<input type="file" id="cv">
+</div>
+
+<label>Surat Pengantar</label>
+<textarea id="pesan" rows="4" placeholder="Tuliskan pesan singkat..."></textarea>
+
+<button type="button" id="sendBtn" disabled>
+Send CV to WhatsApp
+</button>
+
+</form>
+
+<div class="footer-note">
+Pastikan seluruh data telah diisi dengan benar sebelum mengirim lamaran.
+</div>
+</div>
+
+<script>
+const inputs = document.querySelectorAll("#formLamaran input, #formLamaran select, #formLamaran textarea");
+const sendBtn = document.getElementById("sendBtn");
+
+function checkForm(){
+    let valid = true;
+    ["nama","tgl","alamat","email","wa","posisi","siap"].forEach(id=>{
+        if(document.getElementById(id).value.trim()===""){
+            valid=false;
+        }
+    });
+    sendBtn.disabled = !valid;
+}
+inputs.forEach(i=>i.addEventListener("input",checkForm));
+
+sendBtn.onclick = function(){
+    const nama = document.getElementById("nama").value;
+    const posisi = document.getElementById("posisi").value;
+    const wa = document.getElementById("wa").value;
+
+    const text = `Halo HRD Platinum Grill,%0A%0ASaya ${nama}%0AMengajukan lamaran untuk posisi ${posisi}.%0AData lengkap sudah saya isi melalui form.`;
+
+    window.open(`https://wa.me/6283838188931?text=${text}`,"_blank");
+}
+</script>
+
+</body>
+</html>
