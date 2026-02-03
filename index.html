@@ -1,179 +1,107 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lamaran Pekerjaan | Platinum Grill</title>
-
-<style>
-body{
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#f8f9fa,#ececec);
-    margin:0;
-    padding:20px;
-}
-.container{
-    max-width:700px;
-    margin:auto;
-    background:#fff;
-    padding:30px;
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-h1{
-    text-align:center;
-    margin-bottom:10px;
-}
-.desc{
-    text-align:center;
-    font-size:14px;
-    color:#555;
-    margin-bottom:30px;
-}
-.section-title{
-    text-align:center;
-    font-weight:700;
-    letter-spacing:2px;
-    color:#2c2c2c;
-    margin-bottom:25px;
-}
-label{
-    font-size:13px;
-    font-weight:600;
-}
-input, select, textarea{
-    width:100%;
-    padding:10px;
-    margin:8px 0 18px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:14px;
-}
-input:focus, textarea:focus{
-    outline:none;
-    border-color:#28a745;
-}
-.upload-box{
-    border:2px dashed #bbb;
-    padding:25px;
-    text-align:center;
-    border-radius:10px;
-    margin-bottom:20px;
-    color:#666;
-}
-button{
-    width:100%;
-    padding:14px;
-    background:#28a745;
-    color:#fff;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-}
-button:disabled{
-    background:#9ccc9c;
-    cursor:not-allowed;
-}
-.footer-note{
-    text-align:center;
-    font-size:12px;
-    color:#777;
-    margin-top:15px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platinum Grill Tangcity – Recruitment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(1200px at top, #1a1a1a, #0a0a0a);
+      color: #e5e7eb;
+    }
+    .card {
+      background: linear-gradient(
+        180deg,
+        rgba(24,24,27,0.9),
+        rgba(9,9,11,0.95)
+      );
+      border: 1px solid rgba(244,63,94,0.18);
+      backdrop-filter: blur(14px);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #f43f5e, #be123c);
+      box-shadow: 0 10px 30px rgba(244,63,94,0.25);
+    }
+  </style>
 </head>
 
-<body>
+<body class="min-h-screen flex items-center justify-center px-4 py-10">
 
-<div class="container">
-<h1>Lamaran Pekerjaan</h1>
+  <main class="w-full max-w-md card rounded-3xl shadow-2xl overflow-hidden">
 
-<p class="desc">
-Platinum Grill berlokasi di dalam Tangcity Mall, Tangerang, tepatnya di Lantai LG (Lower Ground).  
-Restoran ini menyajikan berbagai menu steak premium dan hidangan hotplate lainnya.  
-Alamat: Jl. Jenderal Sudirman No.1, Cikokol, Tangerang, Banten.
-</p>
+    <!-- HEADER -->
+    <header class="px-8 pt-10 pb-6 text-center border-b border-white/10">
+      <h1 class="text-2xl font-extrabold tracking-[0.3em] text-rose-500 italic">
+        PLATINUM GRILL
+      </h1>
+      <p class="text-[11px] mt-2 tracking-[0.4em] uppercase text-gray-400 font-semibold">
+        E-Recruitment System
+      </p>
+    </header>
 
-<div class="section-title">INFORMASI PELAMAR</div>
+    <!-- INFO -->
+    <section class="mx-6 mt-6 p-4 rounded-2xl bg-rose-950/30 border border-rose-500/30">
+      <p class="text-[11px] text-rose-400 font-bold uppercase mb-1 tracking-wider">
+        ● Informasi Lokasi
+      </p>
+      <p class="text-[12px] text-gray-300 leading-relaxed italic">
+        Platinum Grill berlokasi di dalam Tangcity Mall, Tangerang, tepatnya di
+        Lantai LG (Lower Ground). Restoran ini menyajikan berbagai menu steak
+        premium dan hidangan hotplate lainnya. Mall ini beralamat di Jalan
+        Jenderal Sudirman No. 1, Cikokol, Tangerang, Banten.
+      </p>
+    </section>
 
-<form id="formLamaran">
+    <!-- FORM -->
+    <section class="px-8 pt-8 pb-10">
+      <h2 class="text-center text-sm font-bold tracking-[0.3em] text-gray-400 mb-6">
+        INFORMASI PELAMAR
+      </h2>
 
-<label>Nama Lengkap</label>
-<input type="text" id="nama" placeholder="Nama lengkap">
+      <form class="space-y-4">
+        <input type="text" placeholder="Nama Lengkap (Sesuai KTP)" required
+          class="w-full rounded-2xl px-5 py-4 bg-black/40 border border-white/10
+          text-sm text-white focus:outline-none focus:border-rose-500"/>
 
-<label>Tanggal Lahir</label>
-<input type="date" id="tgl">
+        <input type="tel" placeholder="Nomor WhatsApp Aktif" required
+          class="w-full rounded-2xl px-5 py-4 bg-black/40 border border-white/10
+          text-sm text-white focus:outline-none focus:border-rose-500"/>
 
-<label>Alamat Saat Ini</label>
-<input type="text" id="alamat">
+        <input type="number" min="18" placeholder="Usia (Minimal 18 Tahun)" required
+          class="w-full rounded-2xl px-5 py-4 bg-black/40 border border-white/10
+          text-sm text-white focus:outline-none focus:border-rose-500"/>
 
-<label>Email Aktif</label>
-<input type="email" id="email" placeholder="nama@email.com">
+        <select required
+          class="w-full rounded-2xl px-5 py-4 bg-zinc-900 border border-white/10
+          text-sm font-semibold text-rose-400 focus:outline-none">
+          <option value="">Posisi yang Dilamar</option>
+          <option>Kasir</option>
+          <option>Waiters</option>
+          <option>Crew Kitchen</option>
+        </select>
 
-<label>Nomor WhatsApp</label>
-<input type="tel" id="wa" placeholder="08xxxxxxxxxx">
+        <textarea rows="3" placeholder="Alamat Domisili Saat Ini" required
+          class="w-full rounded-2xl px-5 py-4 bg-black/40 border border-white/10
+          text-sm text-white focus:outline-none focus:border-rose-500"></textarea>
 
-<label>LinkedIn (Opsional)</label>
-<input type="text" id="linkedin">
+        <!-- BUTTON -->
+        <a href="https://forms.gle/ISI_LINK_GOOGLE_FORM_KAMU"
+          class="block text-center btn-primary text-white py-4 rounded-2xl
+          font-extrabold tracking-widest text-sm transition active:scale-95">
+          ISI FORMULIR LAMARAN
+        </a>
+      </form>
+    </section>
 
-<label>Posisi yang Dilamar</label>
-<select id="posisi">
-<option value="">Pilih Posisi</option>
-<option>Kitchen Crew</option>
-<option>Waiter / Waitress</option>
-<option>Cashier</option>
-<option>Supervisor</option>
-</select>
+    <!-- FOOTER -->
+    <footer class="px-6 py-5 border-t border-white/10 text-center">
+      <p class="text-[10px] tracking-widest uppercase text-gray-500">
+        Official Recruitment Platinum Grill – Tangcity Mall
+      </p>
+    </footer>
 
-<label>Tanggal Siap Bekerja</label>
-<input type="date" id="siap">
-
-<label>Unggah Resume / CV</label>
-<div class="upload-box">
-<input type="file" id="cv">
-</div>
-
-<label>Surat Pengantar</label>
-<textarea id="pesan" rows="4" placeholder="Tuliskan pesan singkat..."></textarea>
-
-<button type="button" id="sendBtn" disabled>
-Send CV to WhatsApp
-</button>
-
-</form>
-
-<div class="footer-note">
-Pastikan seluruh data telah diisi dengan benar sebelum mengirim lamaran.
-</div>
-</div>
-
-<script>
-const inputs = document.querySelectorAll("#formLamaran input, #formLamaran select, #formLamaran textarea");
-const sendBtn = document.getElementById("sendBtn");
-
-function checkForm(){
-    let valid = true;
-    ["nama","tgl","alamat","email","wa","posisi","siap"].forEach(id=>{
-        if(document.getElementById(id).value.trim()===""){
-            valid=false;
-        }
-    });
-    sendBtn.disabled = !valid;
-}
-inputs.forEach(i=>i.addEventListener("input",checkForm));
-
-sendBtn.onclick = function(){
-    const nama = document.getElementById("nama").value;
-    const posisi = document.getElementById("posisi").value;
-    const wa = document.getElementById("wa").value;
-
-    const text = `Halo HRD Platinum Grill,%0A%0ASaya ${nama}%0AMengajukan lamaran untuk posisi ${posisi}.%0AData lengkap sudah saya isi melalui form.`;
-
-    window.open(`https://wa.me/6283838188931?text=${text}`,"_blank");
-}
-</script>
+  </main>
 
 </body>
 </html>
