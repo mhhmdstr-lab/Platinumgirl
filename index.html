@@ -3,96 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kirim CV via WhatsApp</title>
+<title>Recruitment | PT Champ Indonesia - Platinum Grill</title>
 
 <style>
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f2f4f8;
+    font-family:'Segoe UI', Tahoma, sans-serif;
+    background:linear-gradient(135deg,#0b3cff,#0f6cff);
+    min-height:100vh;
     display:flex;
-    justify-content:center;
     align-items:center;
-    height:100vh;
+    justify-content:center;
 }
-.box{
+.container{
+    width:100%;
+    max-width:900px;
+    padding:20px;
+}
+.header{
     background:#fff;
-    width:100%;
-    max-width:400px;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    padding:25px 30px;
+    border-radius:14px 14px 0 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-h2{
-    text-align:center;
-    margin-bottom:20px;
+.company h1{
+    margin:0;
+    color:#0b3cff;
+    font-size:26px;
 }
-input, textarea{
-    width:100%;
-    padding:10px;
+.company p{
+    margin:4px 0 0;
+    color:#555;
+    font-size:14px;
+}
+.wa-box{
+    background:#e9f7f0;
+    color:#1f7a4f;
+    padding:12px 18px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:600;
+    text-align:right;
+}
+.form-card{
+    background:#fff;
+    padding:30px;
+    border-radius:0 0 14px 14px;
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+.section-title{
+    font-size:18px;
+    color:#0b3cff;
     margin-bottom:15px;
+    font-weight:700;
+}
+.form-group{margin-bottom:18px;}
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+    color:#333;
+}
+input,select,textarea{
+    width:100%;
+    padding:12px;
     border-radius:8px;
     border:1px solid #ccc;
     font-size:14px;
 }
-button{
-    width:100%;
-    background:#25D366;
+input:focus,select:focus,textarea:focus{
+    border-color:#0b3cff;
+    outline:none;
+}
+textarea{min-height:100px;resize:vertical;}
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+.submit-btn{
+    background:#0b3cff;
     color:#fff;
     border:none;
-    padding:12px;
+    padding:15px;
+    width:100%;
     font-size:16px;
-    border-radius:10px;
-    font-weight:bold;
+    border-radius:12px;
     cursor:pointer;
+    font-weight:700;
 }
-button:hover{
-    background:#1ebd5a;
-}
-.note{
-    font-size:12px;
+.submit-btn:hover{background:#092fbf;}
+.footer{
+    margin-top:15px;
     text-align:center;
-    margin-top:12px;
-    color:#666;
+    color:#fff;
+    font-size:14px;
+}
+.footer a{
+    color:#fff;
+    font-weight:600;
+    text-decoration:none;
+}
+@media(max-width:600px){
+    .row{grid-template-columns:1fr;}
+    .wa-box{text-align:left;margin-top:10px;}
+    .header{flex-direction:column;align-items:flex-start;gap:10px;}
 }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<div class="box">
-<h2>Lamaran Kerja</h2>
+<!-- HEADER -->
+<div class="header">
+    <div class="company">
+        <h1>PT Champ Indonesia</h1>
+        <p><strong>Platinum Grill</strong><br>
+        Penempatan: Tangerang City Mall</p>
+    </div>
+    <div class="wa-box">
+        WhatsApp HR<br>
+        📱 +62 812-3456-7890
+    </div>
+</div>
 
-<input type="text" id="nama" placeholder="Nama Lengkap" required>
-<input type="text" id="posisi" placeholder="Posisi Dilamar" required>
-<textarea id="pesan" placeholder="Pesan singkat (opsional)"></textarea>
+<!-- FORM -->
+<div class="form-card">
+<form>
 
-<button onclick="kirimWA()">KIRIM CV VIA WHATSAPP</button>
+<div class="section-title">Data Pribadi Pelamar</div>
 
-<div class="note">
-Setelah WhatsApp terbuka, silakan lampirkan CV.
+<div class="form-group">
+<label>Nama Lengkap</label>
+<input type="text" placeholder="Nama sesuai KTP" required>
+</div>
+
+<div class="row">
+<div class="form-group">
+<label>Jenis Kelamin</label>
+<select required>
+<option value="">-- Pilih --</option>
+<option>Laki-laki</option>
+<option>Perempuan</option>
+</select>
+</div>
+<div class="form-group">
+<label>Status Pernikahan</label>
+<select>
+<option value="">-- Pilih --</option>
+<option>Single</option>
+<option>Menikah</option>
+</select>
 </div>
 </div>
 
-<script>
-function kirimWA(){
-    var nama = document.getElementById("nama").value;
-    var posisi = document.getElementById("posisi").value;
-    var pesan = document.getElementById("pesan").value;
+<div class="form-group">
+<label>Tempat, Tanggal Lahir</label>
+<input type="text" placeholder="Contoh: Jakarta, 12 Januari 1999" required>
+</div>
 
-    var nomorHR = "447907483724"; // ✅ NOMOR WA KAMU
+<div class="form-group">
+<label>Alamat Domisili</label>
+<textarea placeholder="Alamat lengkap sesuai domisili saat ini" required></textarea>
+</div>
 
-    var text =
-    "Halo Admin,%0A%0A" +
-    "Saya ingin melamar pekerjaan.%0A" +
-    "Nama: " + nama + "%0A" +
-    "Posisi: " + posisi + "%0A%0A" +
-    pesan + "%0A%0A" +
-    "CV saya saya kirimkan melalui WhatsApp ini.";
+<div class="row">
+<div class="form-group">
+<label>Nomor WhatsApp Aktif</label>
+<input type="tel" placeholder="+62xxxxxxxxxx" required>
+</div>
+<div class="form-group">
+<label>Email Aktif</label>
+<input type="email" placeholder="email@example.com" required>
+</div>
+</div>
 
-    window.location.href = "https://wa.me/" + nomorHR + "?text=" + text;
-}
-</script>
+<div class="form-group">
+<label>Pengalaman Kerja</label>
+<textarea placeholder="Tuliskan pengalaman kerja yang relevan (jika ada)"></textarea>
+</div>
 
+<div class="row">
+<div class="form-group">
+<label>Upload CV</label>
+<input type="file" accept=".pdf,.doc,.docx" required>
+</div>
+<div class="form-group">
+<label>Upload Foto</label>
+<input type="file" accept="image/*">
+</div>
+</div>
+
+<button class="submit-btn" type="submit">
+Kirim Lamaran
+</button>
+
+</form>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+© 2026 PT Champ Indonesia – Platinum Grill |  
+<a href="https://wa.me/6281234567890" target="_blank">Hubungi HR via WhatsApp</a>
+</div>
+
+</div>
 </body>
 </html>
