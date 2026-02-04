@@ -1,215 +1,195 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recruitment | PT Champ Indonesia - Platinum Grill</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recruitment Platinum Grill</title>
 
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI', Tahoma, sans-serif;
-    background:linear-gradient(135deg,#0b3cff,#0f6cff);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-.container{
-    width:100%;
-    max-width:900px;
-    padding:20px;
-}
-.header{
-    background:#fff;
-    padding:25px 30px;
-    border-radius:14px 14px 0 0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-.company h1{
-    margin:0;
-    color:#0b3cff;
-    font-size:26px;
-}
-.company p{
-    margin:4px 0 0;
-    color:#555;
-    font-size:14px;
-}
-.wa-box{
-    background:#e9f7f0;
-    color:#1f7a4f;
-    padding:12px 18px;
-    border-radius:10px;
-    font-size:14px;
-    font-weight:600;
-    text-align:right;
-}
-.form-card{
-    background:#fff;
-    padding:30px;
-    border-radius:0 0 14px 14px;
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
-}
-.section-title{
-    font-size:18px;
-    color:#0b3cff;
-    margin-bottom:15px;
-    font-weight:700;
-}
-.form-group{margin-bottom:18px;}
-label{
-    display:block;
-    margin-bottom:6px;
-    font-weight:600;
-    color:#333;
-}
-input,select,textarea{
-    width:100%;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:14px;
-}
-input:focus,select:focus,textarea:focus{
-    border-color:#0b3cff;
-    outline:none;
-}
-textarea{min-height:100px;resize:vertical;}
-.row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-.submit-btn{
-    background:#0b3cff;
-    color:#fff;
-    border:none;
-    padding:15px;
-    width:100%;
-    font-size:16px;
-    border-radius:12px;
-    cursor:pointer;
-    font-weight:700;
-}
-.submit-btn:hover{background:#092fbf;}
-.footer{
-    margin-top:15px;
-    text-align:center;
-    color:#fff;
-    font-size:14px;
-}
-.footer a{
-    color:#fff;
-    font-weight:600;
-    text-decoration:none;
-}
-@media(max-width:600px){
-    .row{grid-template-columns:1fr;}
-    .wa-box{text-align:left;margin-top:10px;}
-    .header{flex-direction:column;align-items:flex-start;gap:10px;}
-}
-</style>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f4c81, #1b6ca8);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #ffffff;
+      max-width: 520px;
+      width: 100%;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0f4c81;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 15px;
+      color: #555;
+      margin-top: 0;
+    }
+
+    .section-title {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #0f4c81;
+      border-bottom: 2px solid #e6f0fa;
+      padding-bottom: 6px;
+    }
+
+    label {
+      font-size: 14px;
+      color: #333;
+      margin-top: 12px;
+      display: block;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 11px;
+      margin-top: 6px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input[type="file"] {
+      padding: 8px;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #1b6ca8;
+      box-shadow: 0 0 0 2px rgba(27,108,168,0.15);
+    }
+
+    .file-note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #555;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .whatsapp {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .wa-btn {
+      display: inline-block;
+      background: #1b6ca8;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .wa-btn:hover {
+      background: #0f4c81;
+      transform: translateY(-2px);
+    }
+
+    .wa-number {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
 
-<!-- HEADER -->
-<div class="header">
-    <div class="company">
-        <h1>PT Champ Indonesia</h1>
-        <p><strong>Platinum Grill</strong><br>
-        Penempatan: Tangerang City Mall</p>
+  <div class="container">
+    <h1>PT Champ Indonesia</h1>
+    <h2>Platinum Grill<br>Penempatan: Tangerang City Mall</h2>
+
+    <div class="section-title">Data Pribadi Pelamar</div>
+
+    <label>Nama Lengkap</label>
+    <input type="text" placeholder="Masukkan nama lengkap">
+
+    <label>Jenis Kelamin</label>
+    <select>
+      <option>-- Pilih --</option>
+      <option>Laki-laki</option>
+      <option>Perempuan</option>
+    </select>
+
+    <label>Tempat, Tanggal Lahir</label>
+    <input type="text" placeholder="Contoh: Jakarta, 10 Januari 2000">
+
+    <label>Alamat Lengkap (Domisili Saat Ini)</label>
+    <input type="text" placeholder="Alamat lengkap">
+
+    <div class="section-title">Kontak</div>
+
+    <label>Nomor WhatsApp Aktif</label>
+    <input type="tel" placeholder="08xxxxxxxxxx">
+
+    <label>Email Aktif</label>
+    <input type="email" placeholder="email@example.com">
+
+    <div class="section-title">Data Tambahan</div>
+
+    <label>Status Pernikahan</label>
+    <select>
+      <option>-- Pilih --</option>
+      <option>Belum Menikah</option>
+      <option>Menikah</option>
+    </select>
+
+    <label>Pendidikan Terakhir</label>
+    <input type="text" placeholder="SMA / D3 / S1">
+
+    <label>Posisi yang Dilamar</label>
+    <input type="text" placeholder="Posisi yang dilamar">
+
+    <div class="section-title">Upload Dokumen (Opsional)</div>
+
+    <label>Upload CV</label>
+    <input type="file" accept=".pdf,.doc,.docx">
+    <div class="file-note">
+      *File tidak diunggah ke sistem.  
+      Silakan kirim CV tersebut secara manual melalui WhatsApp.
     </div>
-    <div class="wa-box">
-        WhatsApp HR<br>
-        📱 +62 812-3456-7890
+
+    <div class="note">
+      Data tidak disimpan di sistem.<br>
+      HRD hanya menerima lamaran melalui WhatsApp resmi.
     </div>
-</div>
 
-<!-- FORM -->
-<div class="form-card">
-<form>
+    <!-- WHATSAPP PALING BAWAH -->
+    <div class="whatsapp">
+      <a class="wa-btn"
+         href="https://wa.me/447907483724?text=Halo%20HRD%20Platinum%20Grill,%20saya%20ingin%20mengirimkan%20CV%20lamaran%20kerja."
+         target="_blank">
+         📤 Send CV via WhatsApp
+      </a>
+      <div class="wa-number">
+        📱 +44 7907 483724
+      </div>
+    </div>
+  </div>
 
-<div class="section-title">Data Pribadi Pelamar</div>
-
-<div class="form-group">
-<label>Nama Lengkap</label>
-<input type="text" placeholder="Nama sesuai KTP" required>
-</div>
-
-<div class="row">
-<div class="form-group">
-<label>Jenis Kelamin</label>
-<select required>
-<option value="">-- Pilih --</option>
-<option>Laki-laki</option>
-<option>Perempuan</option>
-</select>
-</div>
-<div class="form-group">
-<label>Status Pernikahan</label>
-<select>
-<option value="">-- Pilih --</option>
-<option>Single</option>
-<option>Menikah</option>
-</select>
-</div>
-</div>
-
-<div class="form-group">
-<label>Tempat, Tanggal Lahir</label>
-<input type="text" placeholder="Contoh: Jakarta, 12 Januari 1999" required>
-</div>
-
-<div class="form-group">
-<label>Alamat Domisili</label>
-<textarea placeholder="Alamat lengkap sesuai domisili saat ini" required></textarea>
-</div>
-
-<div class="row">
-<div class="form-group">
-<label>Nomor WhatsApp Aktif</label>
-<input type="tel" placeholder="+62xxxxxxxxxx" required>
-</div>
-<div class="form-group">
-<label>Email Aktif</label>
-<input type="email" placeholder="email@example.com" required>
-</div>
-</div>
-
-<div class="form-group">
-<label>Pengalaman Kerja</label>
-<textarea placeholder="Tuliskan pengalaman kerja yang relevan (jika ada)"></textarea>
-</div>
-
-<div class="row">
-<div class="form-group">
-<label>Upload CV</label>
-<input type="file" accept=".pdf,.doc,.docx" required>
-</div>
-<div class="form-group">
-<label>Upload Foto</label>
-<input type="file" accept="image/*">
-</div>
-</div>
-
-<button class="submit-btn" type="submit">
-Kirim Lamaran
-</button>
-
-</form>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-© 2026 PT Champ Indonesia – Platinum Grill |  
-<a href="https://wa.me/6281234567890" target="_blank">Hubungi HR via WhatsApp</a>
-</div>
-
-</div>
 </body>
 </html>
