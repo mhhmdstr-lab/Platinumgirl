@@ -3,125 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lamaran Pekerjaan – Platinum Grill</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Kirim CV via WhatsApp</title>
 
 <style>
 body{
-  background: linear-gradient(135deg,#1e3a8a,#2563eb,#38bdf8);
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f2f4f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
-.card{
-  background: rgba(255,255,255,0.95);
-  border: 1px solid rgba(0,0,0,0.05);
+.box{
+    background:#fff;
+    width:100%;
+    max-width:400px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
 }
-.btn-send{
-  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+h2{
+    text-align:center;
+    margin-bottom:20px;
 }
-input,select,textarea{
-  background:#f8fafc;
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+button{
+    width:100%;
+    background:#25D366;
+    color:#fff;
+    border:none;
+    padding:12px;
+    font-size:16px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{
+    background:#1ebd5a;
+}
+.note{
+    font-size:12px;
+    text-align:center;
+    margin-top:12px;
+    color:#666;
 }
 </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center px-4 py-10">
+<body>
 
-<div class="w-full max-w-md card rounded-3xl shadow-2xl p-6 text-gray-800">
+<div class="box">
+<h2>Lamaran Kerja</h2>
 
-  <!-- HEADER -->
-  <h1 class="text-2xl font-bold text-center mb-2 text-blue-700">
-    Lamaran Pekerjaan
-  </h1>
+<input type="text" id="nama" placeholder="Nama Lengkap" required>
+<input type="text" id="posisi" placeholder="Posisi Dilamar" required>
+<textarea id="pesan" placeholder="Pesan singkat (opsional)"></textarea>
 
-  <p class="text-sm text-center text-gray-600 mb-5">
-    Platinum Grill berlokasi di Tangcity Mall, Tangerang – Lantai LG (Lower Ground).
-    Menyajikan steak premium dan hidangan hotplate.
-    <br><b>Alamat:</b> Jl. Jenderal Sudirman No.1, Cikokol, Tangerang.
-  </p>
+<button onclick="kirimWA()">KIRIM CV VIA WHATSAPP</button>
 
-  <h2 class="text-center text-sm tracking-widest font-bold mb-4 text-blue-600">
-    INFORMASI PELAMAR
-  </h2>
-
-  <!-- FORM -->
-  <form id="formLamaran" class="space-y-3">
-
-    <input name="nama" required placeholder="Nama Lengkap"
-      class="w-full p-3 rounded-xl border">
-
-    <input name="ttl" required type="date"
-      class="w-full p-3 rounded-xl border">
-
-    <input name="alamat" required placeholder="Alamat Saat Ini"
-      class="w-full p-3 rounded-xl border">
-
-    <input name="email" required type="email" placeholder="Email Aktif"
-      class="w-full p-3 rounded-xl border">
-
-    <input name="wa" required type="tel" placeholder="Nomor WhatsApp"
-      class="w-full p-3 rounded-xl border">
-
-    <input name="linkedin" placeholder="LinkedIn (Opsional)"
-      class="w-full p-3 rounded-xl border">
-
-    <select name="posisi" required class="w-full p-3 rounded-xl border">
-      <option value="">Posisi yang Dilamar</option>
-      <option>Kasir</option>
-      <option>Waiter / Waitress</option>
-      <option>Crew Kitchen</option>
-    </select>
-
-    <input name="siapkerja" required type="date"
-      class="w-full p-3 rounded-xl border">
-
-    <!-- UPLOAD VISUAL -->
-    <div class="border-2 border-dashed rounded-xl p-4 text-center text-sm text-gray-500">
-      Unggah Resume / CV<br>
-      <span class="text-xs">(PDF / JPG)</span>
-      <input type="file" class="mt-2 w-full text-xs">
-    </div>
-
-    <textarea name="pesan" required placeholder="Surat Pengantar"
-      class="w-full p-3 rounded-xl border h-24"></textarea>
-
-    <button type="submit"
-      class="w-full btn-send text-white font-bold py-3 rounded-xl mt-3">
-      Send CV to WhatsApp
-    </button>
-
-    <p class="text-xs text-center text-gray-500 mt-2">
-      Pastikan seluruh data telah diisi dengan benar sebelum mengirim lamaran.
-    </p>
-
-  </form>
-
+<div class="note">
+Setelah WhatsApp terbuka, silakan lampirkan CV.
+</div>
 </div>
 
 <script>
-document.getElementById("formLamaran").addEventListener("submit", function(e){
-  e.preventDefault();
+function kirimWA(){
+    var nama = document.getElementById("nama").value;
+    var posisi = document.getElementById("posisi").value;
+    var pesan = document.getElementById("pesan").value;
 
-  const f = e.target;
+    var nomorHR = "447907483724"; // ✅ NOMOR WA KAMU
 
-  const msg =
-`LAMARAN PLATINUM GRILL
-Nama: ${f.nama.value}
-Tanggal Lahir: ${f.ttl.value}
-Alamat: ${f.alamat.value}
-Email: ${f.email.value}
-WhatsApp: ${f.wa.value}
-LinkedIn: ${f.linkedin.value}
-Posisi: ${f.posisi.value}
-Siap Kerja: ${f.siapkerja.value}
+    var text =
+    "Halo Admin,%0A%0A" +
+    "Saya ingin melamar pekerjaan.%0A" +
+    "Nama: " + nama + "%0A" +
+    "Posisi: " + posisi + "%0A%0A" +
+    pesan + "%0A%0A" +
+    "CV saya saya kirimkan melalui WhatsApp ini.";
 
-Surat Pengantar:
-${f.pesan.value}`;
-
-  const wa = "6283838188931"; // NOMOR HRD
-  window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`);
-
-  // RESET FORM BIAR FULL KEMBALI
-  f.reset();
-});
+    window.location.href = "https://wa.me/" + nomorHR + "?text=" + text;
+}
 </script>
 
 </body>
