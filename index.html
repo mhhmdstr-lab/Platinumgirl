@@ -1,195 +1,211 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recruitment Platinum Grill</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absen Freelance - MyMeal Catering</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co.com/XZ1hgXtp/images-26.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #0f4c81, #1b6ca8);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
 
-    .container {
-      background: #ffffff;
-      max-width: 520px;
-      width: 100%;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
+        .logo { width: 100px; margin-bottom: 10px; }
+        h2 { color: #d35400; margin-bottom: 5px; font-size: 1.5rem; }
+        .address { font-size: 0.8rem; color: #666; margin-bottom: 20px; line-height: 1.4; }
 
-    h1 {
-      text-align: center;
-      color: #0f4c81;
-      margin-bottom: 6px;
-    }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
 
-    h2 {
-      text-align: center;
-      font-size: 15px;
-      color: #555;
-      margin-top: 0;
-    }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-    .section-title {
-      margin-top: 25px;
-      margin-bottom: 10px;
-      font-weight: 600;
-      color: #0f4c81;
-      border-bottom: 2px solid #e6f0fa;
-      padding-bottom: 6px;
-    }
+        button:hover { background-color: #219150; }
 
-    label {
-      font-size: 14px;
-      color: #333;
-      margin-top: 12px;
-      display: block;
-    }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            border: 1px solid #ffeeba;
+        }
 
-    input, select {
-      width: 100%;
-      padding: 11px;
-      margin-top: 6px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-    }
-
-    input[type="file"] {
-      padding: 8px;
-    }
-
-    input:focus, select:focus {
-      outline: none;
-      border-color: #1b6ca8;
-      box-shadow: 0 0 0 2px rgba(27,108,168,0.15);
-    }
-
-    .file-note {
-      font-size: 12px;
-      color: #666;
-      margin-top: 6px;
-    }
-
-    .note {
-      font-size: 13px;
-      color: #555;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .whatsapp {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .wa-btn {
-      display: inline-block;
-      background: #1b6ca8;
-      color: #fff;
-      padding: 14px 24px;
-      border-radius: 50px;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .wa-btn:hover {
-      background: #0f4c81;
-      transform: translateY(-2px);
-    }
-
-    .wa-number {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #333;
-    }
-  </style>
+        .hidden { display: none; }
+        
+        /* Dashboard Styles */
+        .dashboard-card { text-align: left; }
+        .profile-img { width: 80px; height: 80px; border-radius: 50%; background: #ddd; margin: 0 auto 15px; display: block; object-fit: cover; }
+        .status-badge { display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .absent { background: #e74c3c; color: white; }
+        .present { background: #2ecc71; color: white; }
+    </style>
 </head>
-
 <body>
 
-  <div class="container">
-    <h1>PT Champ Indonesia</h1>
-    <h2>Platinum Grill<br>Penempatan: Tangerang City Mall</h2>
+<div id="loginSection" class="container">
+    <img src="https://cdn-icons-png.flaticon.com/512/1532/1532674.png" alt="Logo" class="logo">
+    <h2>Login Dashboard Freelance</h2>
+    <p class="address">Jl. Gg. Jubleg No.14F, RT.1/RW.3, Paseban, Kec. Senen, Kota Jakarta Pusat, DKI Jakarta 10440</p>
+    
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="handleLogin()">LOGIN</button>
+</div>
 
-    <div class="section-title">Data Pribadi Pelamar</div>
-
-    <label>Nama Lengkap</label>
-    <input type="text" placeholder="Masukkan nama lengkap">
-
-    <label>Jenis Kelamin</label>
-    <select>
-      <option>-- Pilih --</option>
-      <option>Laki-laki</option>
-      <option>Perempuan</option>
-    </select>
-
-    <label>Tempat, Tanggal Lahir</label>
-    <input type="text" placeholder="Contoh: Jakarta, 10 Januari 2000">
-
-    <label>Alamat Lengkap (Domisili Saat Ini)</label>
-    <input type="text" placeholder="Alamat lengkap">
-
-    <div class="section-title">Kontak</div>
-
-    <label>Nomor WhatsApp Aktif</label>
-    <input type="tel" placeholder="08xxxxxxxxxx">
-
-    <label>Email Aktif</label>
-    <input type="email" placeholder="email@example.com">
-
-    <div class="section-title">Data Tambahan</div>
-
-    <label>Status Pernikahan</label>
-    <select>
-      <option>-- Pilih --</option>
-      <option>Belum Menikah</option>
-      <option>Menikah</option>
-    </select>
-
-    <label>Pendidikan Terakhir</label>
-    <input type="text" placeholder="SMA / D3 / S1">
-
-    <label>Posisi yang Dilamar</label>
-    <input type="text" placeholder="Posisi yang dilamar">
-
-    <div class="section-title">Upload Dokumen (Opsional)</div>
-
-    <label>Upload CV</label>
-    <input type="file" accept=".pdf,.doc,.docx">
-    <div class="file-note">
-      *File tidak diunggah ke sistem.  
-      Silakan kirim CV tersebut secara manual melalui WhatsApp.
+<div id="regisSection" class="container hidden">
+    <h3>Lengkapi Data Karyawan</h3>
+    <input type="text" id="fullName" placeholder="Nama Lengkap">
+    <input type="text" id="pob" placeholder="Tempat Lahir">
+    <input type="date" id="dob" title="Tanggal Lahir">
+    <input type="text" id="addressDetail" placeholder="Alamat Lengkap">
+    <input type="number" id="age" placeholder="Usia">
+    
+    <div class="warning">
+        ⚠️ <strong>Peringatan:</strong> Gaji freelance sebesar <strong>Rp125.000/hari</strong>. Lowongan ini hanya berlaku khusus selama <strong>Bulan Puasa</strong>.
     </div>
+    <br>
+    <button onclick="handleRegistration()">CONFIRM PENDAFTARAN</button>
+</div>
 
-    <div class="note">
-      Data tidak disimpan di sistem.<br>
-      HRD hanya menerima lamaran melalui WhatsApp resmi.
-    </div>
+<div id="dashboardSection" class="container hidden">
+    <div class="dashboard-card">
+        <div style="text-align: right;"><button onclick="toggleProfile()" style="width: auto; padding: 5px 10px; font-size: 0.7rem;">My Profile</button></div>
+        <h3>Selamat Datang, <span id="displayName">...</span></h3>
+        <hr>
+        <div id="profileView" class="hidden" style="margin-bottom: 20px; padding: 10px; background: #f9f9f9; border-radius: 10px;">
+            <img src="https://www.w3schools.com/howto/img_avatar.png" class="profile-img" alt="Foto">
+            <p><strong>Nama:</strong> <span id="pName"></span></p>
+            <p><strong>Usia:</strong> <span id="pAge"></span> Thn</p>
+            <p><strong>Alamat:</strong> <span id="pAddr"></span></p>
+        </div>
 
-    <!-- WHATSAPP PALING BAWAH -->
-    <div class="whatsapp">
-      <a class="wa-btn"
-         href="https://wa.me/447907483724?text=Halo%20HRD%20Platinum%20Grill,%20saya%20ingin%20mengirimkan%20CV%20lamaran%20kerja."
-         target="_blank">
-         📤 Send CV via WhatsApp
-      </a>
-      <div class="wa-number">
-  
-      </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <p>Status Kehadiran Hari Ini:</p>
+            <div id="absenStatus" class="status-badge absent">BELUM ABSEN</div>
+            <br><br>
+            <button id="btnAbsen" onclick="doAbsen()" style="background: #3498db;">KLIK UNTUK ABSEN SEKARANG</button>
+        </div>
     </div>
-  </div>
+</div>
+
+<script>
+    // Logika Login
+    function handleLogin() {
+        const user = document.getElementById('username').value;
+        const pass = document.getElementById('password').value;
+
+        // Validasi: Akhiran 213 dan Pass 6 angka
+        const userValid = user.endsWith('213');
+        const passValid = /^\d{6}$/.test(pass);
+
+        if (userValid && passValid) {
+            checkUserStatus();
+        } else {
+            alert("Username atau Password tidak sesuai kriteria!");
+        }
+    }
+
+    function checkUserStatus() {
+        const savedData = localStorage.getItem('freelanceData');
+        document.getElementById('loginSection').classList.add('hidden');
+        
+        if (savedData) {
+            showDashboard();
+        } else {
+            document.getElementById('regisSection').classList.remove('hidden');
+        }
+    }
+
+    function handleRegistration() {
+        const data = {
+            name: document.getElementById('fullName').value,
+            pob: document.getElementById('pob').value,
+            dob: document.getElementById('dob').value,
+            addr: document.getElementById('addressDetail').value,
+            age: document.getElementById('age').value
+        };
+
+        if(data.name && data.addr) {
+            localStorage.setItem('freelanceData', JSON.stringify(data));
+            document.getElementById('regisSection').classList.add('hidden');
+            showDashboard();
+        } else {
+            alert("Mohon lengkapi semua data!");
+        }
+    }
+
+    function showDashboard() {
+        const data = JSON.parse(localStorage.getItem('freelanceData'));
+        document.getElementById('dashboardSection').classList.remove('hidden');
+        document.getElementById('displayName').innerText = data.name;
+        
+        // Isi data profile
+        document.getElementById('pName').innerText = data.name;
+        document.getElementById('pAge').innerText = data.age;
+        document.getElementById('pAddr').innerText = data.addr;
+
+        // Cek jika sudah pernah absen hari ini (simulasi)
+        if(localStorage.getItem('isAbsen') === 'true') {
+            setAbsenUI();
+        }
+    }
+
+    function doAbsen() {
+        localStorage.setItem('isAbsen', 'true');
+        setAbsenUI();
+        alert("Absensi berhasil dicatat untuk hari ini!");
+    }
+
+    function setAbsenUI() {
+        const badge = document.getElementById('absenStatus');
+        const btn = document.getElementById('btnAbsen');
+        badge.innerText = "SUDAH ABSEN (HADIR)";
+        badge.className = "status-badge present";
+        btn.innerText = "ABSEN SUDAH TERISI";
+        btn.disabled = true;
+        btn.style.background = "#bdc3c7";
+    }
+
+    function toggleProfile() {
+        const pView = document.getElementById('profileView');
+        pView.classList.toggle('hidden');
+    }
+</script>
 
 </body>
 </html>
